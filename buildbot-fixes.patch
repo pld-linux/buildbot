@@ -1,0 +1,12 @@
+diff -urN buildbot-0.7.9.org/buildbot/scheduler.py buildbot-0.7.9/buildbot/scheduler.py
+--- buildbot-0.7.9.org/buildbot/scheduler.py	2008-09-16 18:02:31.000000000 +0200
++++ buildbot-0.7.9/buildbot/scheduler.py	2009-01-30 19:55:42.416536719 +0100
+@@ -172,7 +172,7 @@
+                 (self, time.strftime("%H:%M:%S", time.localtime(when))))
+         now = util.now()
+         if when < now:
+-            when = now + 1
++            when = now
+         if self.timer:
+             self.timer.cancel()
+         self.timer = reactor.callLater(when - now, self.fireTimer)
