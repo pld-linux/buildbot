@@ -1,11 +1,12 @@
 Summary:	BuildBot build automation system
 Name:		buildbot
 Version:	0.7.9
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Development/Building
 Source0:	http://dl.sourceforge.net/buildbot/%{name}-%{version}.tar.gz
 # Source0-md5:	616c193a2508935499f26bcbfc56c08a
+Patch0:		%{name}-fixes.patch
 URL:		http://www.buildbot.net/
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	rpmbuild(macros) >= 1.219
@@ -33,6 +34,7 @@ therefore easier to improve.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 python setup.py build
