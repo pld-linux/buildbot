@@ -10,3 +10,14 @@ diff -urN buildbot-0.7.9.org/buildbot/scheduler.py buildbot-0.7.9/buildbot/sched
          if self.timer:
              self.timer.cancel()
          self.timer = reactor.callLater(when - now, self.fireTimer)
+--- buildbot-0.7.9/./buildbot/status/web/base.py~	2008-09-16 18:02:30.000000000 +0200
++++ buildbot-0.7.9/./buildbot/status/web/base.py	2009-02-01 19:33:10.779117102 +0100
+@@ -349,7 +349,7 @@
+         except KeyError:
+             rev = "??"
+         rev = str(rev)
+-        if len(rev) > 20:
++        if len(rev) > 40:
+             rev = "version is too-long"
+         root = self.path_to_root(req)
+         css_class = css_classes.get(results, "")
