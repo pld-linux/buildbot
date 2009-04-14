@@ -8,7 +8,7 @@ Source0:	http://dl.sourceforge.net/buildbot/%{name}-%{version}.tar.gz
 # Source0-md5:	616c193a2508935499f26bcbfc56c08a
 Patch0:		%{name}-fixes.patch
 URL:		http://www.buildbot.net/
-BuildRequires:	python-devel >= 1:2.5
+BuildRequires:	python-devel
 BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq	python-modules
 Requires:	python-TwistedConch
@@ -16,6 +16,7 @@ Requires:	python-TwistedCore
 Requires:	python-TwistedMail
 Requires:	python-TwistedWeb
 Requires:	python-TwistedWords
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,12 +38,11 @@ therefore easier to improve.
 %patch0 -p1
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-python setup.py install \
+%{__python} setup.py install \
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2
 %py_postclean
@@ -55,6 +55,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc CREDITS NEWS README docs/*.html docs/examples docs/images
 %doc contrib
 %attr(755,root,root) %{_bindir}/buildbot
-%{py_sitescriptdir}/buildbot*.egg-info
-%dir %{py_sitescriptdir}/buildbot
 %{py_sitescriptdir}/buildbot
+%{py_sitescriptdir}/buildbot*.egg-info
