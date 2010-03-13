@@ -8,6 +8,8 @@ Source0:	http://dl.sourceforge.net/buildbot/%{name}-%{version}.tar.gz
 # Source0-md5:	5ba9559e2ef0d4e34a26815d95fc2d68
 URL:		http://www.buildbot.net/
 BuildRequires:	python-devel
+BuildRequires:	python-modules
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq	python-modules
 Requires:	python-TwistedConch
