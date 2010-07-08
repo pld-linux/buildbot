@@ -1,7 +1,7 @@
 Summary:	BuildBot build automation system
 Name:		buildbot
 Version:	0.7.12
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Development/Building
 Source0:	http://dl.sourceforge.net/buildbot/%{name}-%{version}.tar.gz
