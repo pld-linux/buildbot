@@ -1,11 +1,11 @@
 Summary:	BuildBot build automation system
 Name:		buildbot
-Version:	0.7.12
-Release:	2
+Version:	0.8.1
+Release:	1
 License:	GPL v2
 Group:		Development/Building
 Source0:	http://dl.sourceforge.net/buildbot/%{name}-%{version}.tar.gz
-# Source0-md5:	5ba9559e2ef0d4e34a26815d95fc2d68
+# Source0-md5:	53b7defb3f8919413907990269b7566d
 URL:		http://www.buildbot.net/
 BuildRequires:	python-devel
 BuildRequires:	python-modules
@@ -52,7 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CREDITS NEWS README docs/*.html docs/examples docs/images
+%doc CREDITS NEWS README UPGRADING
 %doc contrib
 %attr(755,root,root) %{_bindir}/buildbot
 %{py_sitescriptdir}/buildbot
